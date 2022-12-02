@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Rhino_Plugin.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,17 @@ namespace Rhino_Plugin.Views
     /// </summary>
     public partial class GeneratePlane : UserControl
     {
+        private GeneratePanelVM _generatePanelVM;
         public GeneratePlane()
         {
             InitializeComponent();
+            _generatePanelVM = new GeneratePanelVM();
+            this.DataContext = _generatePanelVM;
+        }
+
+        private void btnGeneratePlate_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show(_generatePanelVM.LengthX.ToString());
         }
     }
 }

@@ -44,7 +44,8 @@
                Content="Length(Lx): " />
         <TextBox x:Name="Lengthx"
                  Grid.Row="1"
-                 Grid.Column="1">
+                 Grid.Column="1"
+                 Text="{Binding LengthX, FallbackValue='-', TargetNullValue='--', Mode=OneWayToSource}">
         </TextBox>
         <Label Grid.Row="1" 
                Grid.Column="2" 
@@ -91,6 +92,6 @@
                 Grid.Row="5"
                 Grid.ColumnSpan="2"
                 Margin="5"
-                Content="Generate Plate" />
+                Content="Generate Plate" Click="btnGeneratePlate_Click" />
     </Grid>
 </UserControl>
