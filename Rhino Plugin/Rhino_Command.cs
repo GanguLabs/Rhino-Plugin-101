@@ -57,6 +57,15 @@ namespace Rhino_Plugin
             }
 
             doc.Objects.AddLine(pt0, pt1);
+
+            Point3d p1 = pt0;
+            Point3d p4 = pt1;
+            Point3d p2 = new Point3d(p4.X, p1.Y, p1.Z);
+            Point3d p3 = new Point3d(p1.X, p4.Y, p1.Z);
+
+            var surface = NurbsSurface.CreateFromCorners(p1, p2, p4, p3);
+            doc.Objects.AddSurface(surface);
+
             doc.Views.Redraw();
             RhinoApp.WriteLine("The {0} command added one line to the document.", EnglishName);
 
