@@ -35,7 +35,7 @@
                    FontSize="20"
                    FontWeight="ExtraBold"
                    Grid.ColumnSpan="4">
-            Generate Rectangula Flat Plane
+            Generate Rectangular Flat Plane
         </TextBlock>
         <Label Grid.Row="1" 
                Grid.Column="0" 

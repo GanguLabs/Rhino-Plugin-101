@@ -7,7 +7,7 @@ using Rhino.UI;
 using System;
 using System.Collections.Generic;
 
-namespace Rhino_Plugin
+namespace Rhino_Plugin.RhinoCommands
 {
     public class DisplayWpfWindow : Command
     {

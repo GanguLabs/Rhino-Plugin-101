@@ -13,7 +13,7 @@ using Eto.Forms;
 using Command = Rhino.Commands.Command;
 using System.Security.Cryptography;
 
-namespace Rhino_Plugin
+namespace Rhino_Plugin.RhinoCommands
 {
     public class GeneratePlane_Command : Command
     {
@@ -56,7 +56,7 @@ namespace Rhino_Plugin
 
             // MessageBox.Show($"LengthX: {lenX.ToString()} \nLengthY: {lenY.ToString()}");
 
-            Point3d pt0 = new Point3d(centerPoint.X - lenX/2, centerPoint.Y - lenY / 2, centerPoint.Z);
+            Point3d pt0 = new Point3d(centerPoint.X - lenX / 2, centerPoint.Y - lenY / 2, centerPoint.Z);
             Point3d pt1 = new Point3d(centerPoint.X + lenX / 2, centerPoint.Y + lenY / 2, centerPoint.Z);
 
             //doc.Objects.AddLine(pt0, pt1);
