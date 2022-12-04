@@ -29,43 +29,10 @@ namespace Rhino_Plugin
             var panel_id = WpfPanelHost.PanelId;
             var panel_visible = Panels.IsPanelVisible(panel_id);
 
-            var prompt = (panel_visible)
-              ? "WPF panel is visible. New value"
-              : "WPF panel is hidden. New value";
-
-            var go = new GetOption();
-            go.SetCommandPrompt(prompt);
-            var hide_index = go.AddOption("Hide");
-            var show_index = go.AddOption("Show");
-            var toggle_index = go.AddOption("Toggle");
-            go.Get();
-
-            if (go.CommandResult() != Result.Success)
-                return go.CommandResult();
-
-            var option = go.Option();
-            if (null == option)
-                return Result.Failure;
-
-            var index = option.Index;
-            if (index == hide_index)
-            {
-                if (panel_visible)
-                    Panels.ClosePanel(panel_id);
-            }
-            else if (index == show_index)
-            {
-                if (!panel_visible)
-                    Panels.OpenPanel(panel_id);
-            }
-            else if (index == toggle_index)
-            {
-                if (panel_visible)
-                    Panels.ClosePanel(panel_id);
-                else
-                    Panels.OpenPanel(panel_id);
-            }
-
+            if (panel_visible)
+                Panels.ClosePanel(panel_id);
+            else
+                Panels.OpenPanel(panel_id);
 
             return Result.Success;
         }
