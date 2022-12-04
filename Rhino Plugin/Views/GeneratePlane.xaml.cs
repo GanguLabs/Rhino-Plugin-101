@@ -31,6 +31,9 @@ namespace Rhino_Plugin.Views
 
         private void btnGeneratePlate_Click(object sender, RoutedEventArgs e)
         {
+            // reference: https://developer.rhino3d.com/guides/rhinocommon/run-rhino-command-from-plugin/
+            Rhino.RhinoApp.RunScript("_-Line 0,0,0 10,10,10", false);
+
             MessageBox.Show(_generatePanelVM.LengthX.ToString());
         }
     }
