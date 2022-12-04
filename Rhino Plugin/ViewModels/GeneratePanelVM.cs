@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace Rhino_Plugin.ViewModels
 {
@@ -19,6 +20,8 @@ namespace Rhino_Plugin.ViewModels
 				OnPropertyChanged(nameof(LengthX));
 			}
 		}
+
+		public ICommand GeneratePlateCommand { get; }
 
 	}
 }

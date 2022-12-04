@@ -88,6 +88,7 @@
         </TextBox>
 
         <Button x:Name="btnGeneratePlate" 
+                Command="{Binding GeneratePlateCommand}"
                 Grid.Column="1"
                 Grid.Row="5"
                 Grid.ColumnSpan="2"
