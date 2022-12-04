@@ -22,7 +22,7 @@ namespace Rhino_Plugin
         public static DisplayWpfWindow Instance { get; private set; }
 
         ///<returns>The command name as it appears on the Rhino command line.</returns>
-        public override string EnglishName => "GeneratePlane_WPF";
+        public override string EnglishName => "GeneratePlate_WPF";
 
         protected override Result RunCommand(RhinoDoc doc, RunMode mode)
         {

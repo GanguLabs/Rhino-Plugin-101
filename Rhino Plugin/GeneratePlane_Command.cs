@@ -22,8 +22,8 @@ namespace Rhino_Plugin
         protected override Result RunCommand(RhinoDoc doc, RunMode mode)
         {
             Point3d centerPoint = new Point3d(0, 0, 0);
-            int lenX = 10;
-            int lenY = 10;
+            float lenX = 10.0f;
+            float lenY = 10.0f;
 
             GetPoint gp = new GetPoint();
             gp.SetCommandPrompt("Input Center Point of the plate");
@@ -31,7 +31,8 @@ namespace Rhino_Plugin
             GetResult get_center = gp.Get();
             if (get_center == GetResult.Point)
             {
-                doc.Objects.AddPoint(gp.Point());
+                centerPoint = gp.Point();
+                // doc.Objects.AddPoint(gp.Point());
             }
 
             GetInteger getX = new GetInteger();
