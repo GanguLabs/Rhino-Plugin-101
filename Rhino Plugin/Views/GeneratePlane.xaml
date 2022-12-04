@@ -45,7 +45,7 @@
         <TextBox x:Name="Lengthx"
                  Grid.Row="1"
                  Grid.Column="1"
-                 Text="{Binding LengthX, FallbackValue='-', TargetNullValue='--', Mode=OneWayToSource}">
+                 Text="{Binding LengthX, FallbackValue='3', Mode=OneWayToSource}">
         </TextBox>
         <Label Grid.Row="1" 
                Grid.Column="2" 
@@ -54,7 +54,8 @@
                Content="Length(Ly): " />
         <TextBox x:Name="Lengthy"
                  Grid.Row="1"
-                 Grid.Column="4">
+                 Grid.Column="4"
+                 Text="{Binding LengthY, FallbackValue='5', Mode=OneWayToSource}">
         </TextBox>
 
         <Label Grid.Row="2" 
@@ -64,7 +65,8 @@
                Content="X: " />
         <TextBox x:Name="xCoord"
                  Grid.Row="2"
-                 Grid.Column="1">
+                 Grid.Column="1"
+                 Text="{Binding XCoord, FallbackValue='0', Mode=OneWayToSource}">
         </TextBox>
 
         <Label Grid.Row="3" 
@@ -74,7 +76,8 @@
                Content="Y: " />
         <TextBox x:Name="yCoord"
                  Grid.Row="3"
-                 Grid.Column="1">
+                 Grid.Column="1"
+                 Text="{Binding YCoord, FallbackValue='0', Mode=OneWayToSource}">
         </TextBox>
 
         <Label Grid.Row="4" 
@@ -84,7 +87,8 @@
                Content="Z: " />
         <TextBox x:Name="zCoord"
                  Grid.Row="4"
-                 Grid.Column="1">
+                 Grid.Column="1"
+                 Text="{Binding ZCoord, FallbackValue='0', Mode=OneWayToSource}">
         </TextBox>
 
         <Button x:Name="btnGeneratePlate" 

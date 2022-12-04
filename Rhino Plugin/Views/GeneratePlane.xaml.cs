@@ -1,4 +1,5 @@
-﻿using Rhino_Plugin.ViewModels;
+﻿using Rhino.Geometry;
+using Rhino_Plugin.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,10 +32,20 @@ namespace Rhino_Plugin.Views
 
         private void btnGeneratePlate_Click(object sender, RoutedEventArgs e)
         {
-            // reference: https://developer.rhino3d.com/guides/rhinocommon/run-rhino-command-from-plugin/
-            Rhino.RhinoApp.RunScript("_-Line 0,0,0 10,10,10", false);
+            Point3d centerPoint = new Point3d(0, 0, 0);
+            int lenX = int.Parse(_generatePanelVM.LengthX);
+            int lenY = int.Parse(_generatePanelVM.LengthY);
 
-            MessageBox.Show(_generatePanelVM.LengthX.ToString());
+            int xCoord = int.Parse(_generatePanelVM.XCoord);
+            int yCoord = int.Parse(_generatePanelVM.YCoord);
+            int zCoord = int.Parse(_generatePanelVM.ZCoord);
+            centerPoint = new Point3d(xCoord, yCoord, zCoord);
+
+            string genPlateScript = $"_-Generate_Plate {centerPoint.ToString()} {lenX.ToString()} {lenY.ToString()}";
+            // reference: https://developer.rhino3d.com/guides/rhinocommon/run-rhino-command-from-plugin/
+            Rhino.RhinoApp.RunScript(genPlateScript, false);
+
+            // MessageBox.Show(_generatePanelVM.LengthX.ToString());
         }
     }
 }
